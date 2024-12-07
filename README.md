@@ -55,9 +55,6 @@ The evaluation criteria are as follows:
     end
 ```
 
-This evaluation was done on the following computer configurations, and the results may vary from computer to computer.
-> AMD Ryzen 5 3600 6-Core CPU / 16G DDR4 3200MHz Memory
-
 We use criterion create to perform the benchmark. For more information, please click [here](https://crates.io/crates/criterion).
 
 <div style="text-align: center">
@@ -116,10 +113,7 @@ After choosing the type of value, you can take the operation to the tree. Here i
     5. Print in-order traversal of the tree.
     6. Check if the tree is empty.
     7. Print the tree showing its colors and structure.
-    8. Print pre-order traversal of the tree.
-    9. Print post-order traversal of the tree.
-    10. Check if the element(s) exists in the tree.
-    11. Quit.
+    8. Quit.
     ----------------------------------------
 ```
 
@@ -136,10 +130,7 @@ After choosing the type of value, you can take the operation to the tree. Here i
     5. Print in-order traversal of the tree.
     6. Check if the tree is empty.
     7. Print the tree showing its colors and structure.
-    8. Check tree's property.
-    9. Update the value of a specific node.
-    10. Check if the element(s) exists in the tree.
-    11. Quit.
+    8. Quit.
     ----------------------------------------
 ```
 
@@ -223,74 +214,6 @@ The base operations from 1 to 7 are essentially identical for both trees. Theref
         R: 10.1 (Height: 1)
     ----------------------------------------
 ```
-### Feature Operations
-There are certain feature operations that differ between the AVL and Red-Black tree.
-- AVL Tree <br>
-    8.  Print pre-order traversal of the tree.
-    ```
-        ----------------------------------------
-        8
-        ----------------------------------------
-        Pre-order traversal: 
-        pre-order: 6.5 1.1 9.8 7.5 10.1 
-        ----------------------------------------
-    ```
-    9. Print post-order traversal of the tree.
-    ```
-        ----------------------------------------
-        9
-        ----------------------------------------
-        Post-order traversal: 
-        post-order: 1.1 7.5 10.1 9.8 6.5 
-        ----------------------------------------
-    ```
-    10. Check if the element(s) exists in the tree.
-    ```
-        ----------------------------------------
-        10
-        ----------------------------------------
-        Please input the node(s) you want to check. Separate by one whitespace.
-        5.0 1.1
-        Node: 5.0 Existence: false
-        Node: 1.1 Existence: true
-        ----------------------------------------
-    ```
-
-- Red-Black Tree <br>
-    8. Check each property of the Red-Black tree.
-    ```
-        ----------------------------------------
-        8
-        ----------------------------------------
-        The current tree satisfies each attribute? true
-        ----------------------------------------
-    ```
-    9. Update the value of a specific node.
-    ```
-        ----------------------------------------
-        9
-        ----------------------------------------
-        1.1     6.5     7.5     9.8     10.1 
-        Current tree contains values above.
-        Please input the node you want to update. Separate by one whitespace e.g. 1 2(replace 1 with 2)
-        7.5 2.2
-        Update succeed!
-        ----------------------------
-        1.1     2.2     6.5     9.8     10.1 
-        Current tree contains values above.
-        ----------------------------------------
-    ```
-    10. Check if the element(s) exists in the tree.
-    ```
-        ----------------------------------------
-        10
-        ----------------------------------------
-        Please input the node(s) you want to check. Separate by one whitespace.
-        2.2 6.6
-        Node: 2.2 Existence: true
-        Node: 6.6 Existence: false
-        ----------------------------------------
-    ```
 
 ### Benchmark
 Run the Benchmark using
