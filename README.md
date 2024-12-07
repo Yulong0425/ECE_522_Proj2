@@ -1,3 +1,12 @@
+# Group Members: 
+| Name      | ID      |
+| ------------- | ------------- |
+| Yicheng Yang | 1647241 |
+| Jiale Cai | 1815497 |
+| Zhouyiyang Yang | 1868452 |
+| Yulong Zhang | 1823084 |
+___
+
 # Design Document
 Dear valued user, we appreciate your decision to utilize our AVL and Red-Black tree libraries.
 <br>
