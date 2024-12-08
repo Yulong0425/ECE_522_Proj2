@@ -38,7 +38,7 @@ The Red-Black Tree library offers an implementation of Red-Black Trees, a type o
 
 ## Major Innovations
 ### The Support of Multiple Data Types
-Experience the power of versatility with our innovative AVL and Red-Black tree libraries in Rust! These libraries are designed to support multiple data types, providing you with the flexibility to manage not just integers or strings, but also complex data structures. Whether you're developing a simple application or a complex system, our libraries adapt to your needs, broadening their usability across different scenarios. 
+Experience the power of versatility with our innovative AVL and Red-Black tree libraries in Rust! These libraries are designed to support multiple data types, providing you with the flexibility to manage not just integers, but also complex data structures. Whether you're developing a simple application or a complex system, our libraries adapt to your needs, broadening their usability across different scenarios. 
 <br>
 Leveraging Rust's powerful features like generics and traits, we've overcome the challenges of a statically typed language Leveraging Rust's powerful features like generics and traits, we've overcome the challenges of a statically typed language to offer you a solution that ensures type safety and performance.
 
