@@ -76,11 +76,6 @@ Experience the power of efficiency with our AVL Tree, the champion of insertion 
 And when it comes to search operations, nothing beats our RB Tree. 
 Both of them outshine the competition, setting a new standard in performance.
 
-## System Limitations
-- Inadequate error-capture system
-- Mixed data types are not supported
-- Unfixed bugs in RedBlackTree Deletion, we will continually fix it in the weekend
-
 ## User Manual
 For a quick start, you can simply use `cargo run` to enter the interactive system.
 Here is the ouput you might see.
