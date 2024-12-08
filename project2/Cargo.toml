@@ -1,6 +1,31 @@
 [package]
-name = "project2"
+name = "project"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+tree_collections = "0.1.8"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bench]]
+name = "rb_benchmark"
+path = "benches/rb_benchmark.rs"
+harness = false
+
+[[bench]]
+name = "avl_benchmark"
+path = "benches/avl_benchmark.rs"
+harness = false
+
+[[bench]]
+name = "rb_baseline"
+path = "benches/rb_baseline.rs"
+harness = false
+
+[[bench]]
+name = "avl_baseline"
+path = "benches/avl_baseline.rs"
+harness = false
+
