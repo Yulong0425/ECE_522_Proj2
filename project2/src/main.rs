@@ -35,7 +35,7 @@ fn input_to_vec<T: FromStr>() -> Result<Vec<T>, ()> {
     for i in numbers {
         match i.parse() {
             Ok(i) => vec.push(i),
-            Err(_) => println!("'{}' is not a valid floating-point number", i),
+            Err(_) => println!("'{}' is not a valid number", i),
         }
     }
     Ok(vec)
@@ -131,7 +131,7 @@ fn avl_tree_interface<T: GetExample + Copy + Clone + Debug + PartialOrd + Displa
             Some(5) => {
                 println!("----------------------------------------");
                 println!("In-order traversal: ");
-                m_avl_tree.print_in_order();
+                m_avl_tree.display_in_order();
             },
             Some(6) => {
                 println!("----------------------------------------");

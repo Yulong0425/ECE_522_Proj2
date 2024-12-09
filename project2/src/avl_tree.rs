@@ -74,12 +74,6 @@ impl<T: PartialOrd + Copy + std::fmt::Debug> TreeNode<T> {
         }
     }
 
-    // // for debugging
-    // pub fn print_info(&self) {
-    //     let value = &self.key;
-    //     let height = self.height;
-    //     println!("value: {:?}, height: {}", value, height);
-    // }
 }
 
 
@@ -97,10 +91,6 @@ impl<T: PartialOrd + Copy + std::fmt::Debug + std::fmt::Display> AVLTree<T>  {
         }
     }
 
-    // count of leaves 
-    //pub fn count_leaves(&self) -> i32 {
-    //    self.count.try_into().unwrap()
-    //}
     pub fn count_leaves(&self) -> usize {
         fn count_leaves_recursive<T>(node: &Option<Link<T>>) -> usize {
             match node {
@@ -121,6 +111,26 @@ impl<T: PartialOrd + Copy + std::fmt::Debug + std::fmt::Display> AVLTree<T>  {
         }
 
         count_leaves_recursive(&self.root)
+    }
+
+    pub fn display_in_order(&self) {
+        fn traverse_in_order<T: std::fmt::Display>(
+            node: &Option<Link<T>>,
+            visit: &mut impl FnMut(&T),
+        ) {
+            if let Some(rc_node) = node {
+                let borrowed_node = rc_node.borrow();
+                traverse_in_order(&borrowed_node.left, visit);
+                visit(&borrowed_node.key);
+                traverse_in_order(&borrowed_node.right, visit);
+            }
+        }
+
+        let mut display = |key: &T| {
+            print!("{} ", key);
+        };
+        traverse_in_order(&self.root, &mut display);
+        println!();
     }
 
     // check empty
@@ -522,80 +532,8 @@ impl<T: PartialOrd + Copy + std::fmt::Debug + std::fmt::Display> AVLTree<T>  {
         }
     }
 
-    pub fn debug_format(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "AVL Tree Structure:\n")?;
-        self.root.as_ref().map(|node| {
-            self.print_structure_recursive(&Some(node.clone()), 0, f, "Root");
-        });
-        Ok(())
-    }
-
-    fn print_structure_recursive(
-        &self,
-        node: &Option<Link<T>>,
-        depth: usize,
-        f: &mut fmt::Formatter<'_>,
-        pos: &str
-    ) {
-        if let Some(rc_node) = node {
-            let borrowed_node = rc_node.borrow();
-
-            // Print the current node with its depth using custom formatting
-            write!(
-                f,
-                "{}{}: {} (Height: {})\n",
-                " ".repeat(depth * 2),
-                pos,
-                borrowed_node.key,
-                borrowed_node.height,
-            )
-            .unwrap();
-
-            // Recursively print the left and right children, increasing the depth
-            self.print_structure_recursive(&borrowed_node.left, depth + 1, f, "L");
-            self.print_structure_recursive(&borrowed_node.right, depth + 1, f, "R");
-        }
-    }
-
-
-    fn display_recursive(&self, node: &Option<Link<T>>, depth: usize, f: &mut fmt::Formatter<'_>, pos: &str) {
-        if let Some(rc_node) = node {
-            let borrowed_node = rc_node.borrow();
-
-            // Print the current node with its key, height, and depth using custom formatting
-            write!(
-                f,
-                "{}{}: {} (Height: {})\n",
-                " ".repeat(depth * 2),
-                pos,
-                borrowed_node.key,
-                borrowed_node.height,
-            )
-            .expect("Failed to write to formatter");
-
-            // Recursively print the left and right children, increasing the depth
-            self.display_recursive(&borrowed_node.left, depth + 1, f, "L");
-            self.display_recursive(&borrowed_node.right, depth + 1, f, "R");
-        }
-    }
-
 }
 
-
-impl<T: Ord + Copy + std::fmt::Debug + std::fmt::Display> fmt::Debug for AVLTree<T> {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        self.debug_format(f)
-    }
-}
-
-
-impl<T: Ord + Copy + std::fmt::Debug + std::fmt::Display> fmt::Display for AVLTree<T> {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "AVL Tree Structure:\n")?;
-        self.display_recursive(&self.root, 0, f, "Root");
-        Ok(())
-    }
-}
 
 
 
