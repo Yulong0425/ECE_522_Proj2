@@ -57,21 +57,6 @@ The evaluation criteria are as follows:
 
 We use criterion create to perform the benchmark. For more information, please click [here](https://crates.io/crates/criterion).
 
-<div style="text-align: center">
-    <img src="image/Design%20Document/result_summary.png" style="width:95%" /> <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Result Summary Table</div>
-</div>
-
-<div style="text-align: center">
-    <img src="image/Design%20Document/Insert Benchmark Result.png" style="width:85%" /> <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Insert Benchmark Result</div>
-</div>
-
-<div style="text-align: center">
-    <img src="image/Design%20Document/Search Benchmark Result.png" style="width:85%" /> <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Search Benchmark Result</div>
-</div>
-
 Experience the power of efficiency with our AVL Tree, the champion of insertion performance! 
 And when it comes to search operations, nothing beats our RB Tree. 
 Both of them outshine the competition, setting a new standard in performance.
