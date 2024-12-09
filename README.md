@@ -57,6 +57,8 @@ The evaluation criteria are as follows:
 
 We use criterion create to perform the benchmark. For more information, please click [here](https://crates.io/crates/criterion).
 
+For more details about performance, please see our project report.
+
 Experience the power of efficiency with our AVL Tree, the champion of insertion performance! 
 And when it comes to search operations, nothing beats our RB Tree. 
 Both of them outshine the competition, setting a new standard in performance.
